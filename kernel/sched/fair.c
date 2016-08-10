@@ -8934,7 +8934,7 @@ static inline void calculate_imbalance(struct lb_env *env, struct sd_lb_stats *s
 					SCHED_LOAD_SCALE;
 		if (load_above_capacity > busiest->group_capacity) {
 			load_above_capacity -= busiest->group_capacity;
-			load_above_capacity *= NICE_0_LOAD;
+			load_above_capacity *= scale_load_down(NICE_0_LOAD);
 			load_above_capacity /= busiest->group_capacity;
 		} else
 			load_above_capacity = ~0UL;
