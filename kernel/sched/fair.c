@@ -5635,6 +5635,7 @@ static void calc_sg_energy(struct energy_env *eenv)
 static int compute_energy(struct energy_env *eenv)
 {
 	struct cpumask visit_cpus;
+	int cpu_count;
 
 	WARN_ON(!eenv->sg_top->sge);
 
